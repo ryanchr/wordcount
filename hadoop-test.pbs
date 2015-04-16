@@ -2,7 +2,7 @@
 # Hadoop HPCC Cluster Test Job
 #PBS -k eo
 #PBS -j eo
-#PBS -l walltime=1:00:00
+#PBS -l walltime=00:30:00
 #PBS -l nodes=3:ppn=6
 #PBS -l pmem=2g
 
@@ -19,10 +19,12 @@ $WORK_HOME/setup-and-start-hadoop-on-hpcc
 if [ $? -eq 0 ]; then
   # start the pi estimation job
   cd $WORK_HOME
-  hadoop dfs -copyFromLocal pg20417.txt /user/hduser/wordcount/pg20417.txt
-  hadoop dfs -ls /user/hduser/wordcount
-  hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar wordcount /user/hduser/wordcount /user/hduser/wordcount-output
-  hadoop dfs -cat /user/hduser/wordcount-output/part-r-00000
+
+  sleep 10m
+  # hadoop dfs -copyFromLocal pg20417.txt /user/hduser/wordcount/pg20417.txt
+  # hadoop dfs -ls /user/hduser/wordcount
+  # hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar wordcount /user/hduser/wordcount /user/hduser/wordcount-output
+  # hadoop dfs -cat /user/hduser/wordcount-output/part-r-00000
   # hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar pi 250 1000
 
   # when this script exits the hadoop cluster is shutdown so copy off data here

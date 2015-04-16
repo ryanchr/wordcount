@@ -14,7 +14,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.34.x86_64/jre
 # These vars can be set for development purposes but default to production values
 HADOOP_LOG_DIR=${HADOOP_LOG_DIR:-$TMPDIR/hadoop/logs}
 HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-/scratch/hadoop/conf}
-HADOOP_TEMPLATE_DIR=${HADOOP_TEMPLATE_DIR:-/home/rcf-40/mingyihs/hadoop-proj/conf/}
+HADOOP_TEMPLATE_DIR=${HADOOP_TEMPLATE_DIR:-/home/rcf-40/mingyihs/git-proj/hadoop-proj/conf/}
 
 # These could be set by the user if needed
 HADOOP_MAP_TASK_HEAP=${HADOOP_MAP_TASK_HEAP:-1024}
