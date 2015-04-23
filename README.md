@@ -3,7 +3,10 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 <Option 1> Interactive mode
 
-1. `git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git`
+1.
+
+            git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git
+
 2. In setup-and-start-hadoop-on-hpcc, change line 8 HADOOP_TEMPLATE_DIR to your working directory, specifically where your conf/ folder is.
 2. You need to request nodes by **qsub** and run it in the interactive mode by adding option **-I** If you need more options, please check the main page of qsub.
 
