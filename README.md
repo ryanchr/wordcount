@@ -3,7 +3,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 <Option 1> Interactive mode
 
-1. In setup-and-start-hadoop-on-hpcc, change line 8 HADOOP_TEMPLATE_DIR to your working directory, specifically where your conf/ folder is.
+1. Copy hadoop repository to your working directory.
 
             git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git
 
@@ -29,8 +29,8 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
             git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git
 
-2. In PBS script, modify your WORK_HOME path.
-3. The current PBS script will run the hadoop example (pi calculation). If you want to run other examples, modify the corresponding paths.
+2. In PBS script `Hadoop-example.pbs`, modify your WORK_HOME path. 
+3. The current PBS script will run the hadoop example (wordcount). If you want to run other examples, modify the corresponding paths.
 4. In setup-and-start-hadoop-on-hpcc, change line 8 HADOOP_TEMPLATE_DIR to your working directory, specifically where your conf/ folder is.
 
  
