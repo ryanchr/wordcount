@@ -6,7 +6,7 @@
 #PBS -l nodes=3:ppn=6
 #PBS -l pmem=2g
 
-WORK_HOME=/home/rcf-40/mingyihs/hadoop-proj
+WORK_HOME=/path/to/work_home
 
 echo $(date) - HADOOP PBS Job Started
 
@@ -17,18 +17,16 @@ $WORK_HOME/setup-and-start-hadoop-on-hpcc
 
 # Check to make sure hadoop started up before running our code.
 if [ $? -eq 0 ]; then
-  # start the pi estimation job
   cd $WORK_HOME
 
-  sleep 10m
-  # hadoop dfs -copyFromLocal pg20417.txt /user/hduser/wordcount/pg20417.txt
-  # hadoop dfs -ls /user/hduser/wordcount
-  # hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar wordcount /user/hduser/wordcount /user/hduser/wordcount-output
-  # hadoop dfs -cat /user/hduser/wordcount-output/part-r-00000
-  # hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar pi 250 1000
+  # start the wordcount job
+  hadoop dfs -copyFromLocal pg20417.txt /user/hduser/wordcount/pg20417.txt
+  hadoop dfs -ls /user/hduser/wordcount
+  hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar wordcount /user/hduser/wordcount /user/hduser/wordcount-output
+  hadoop dfs -cat /user/hduser/wordcount-output/part-r-00000
 
   # when this script exits the hadoop cluster is shutdown so copy off data here
-  # rsync -av $TMPDIR/hadoop/logs ~/logs
+  hadoop dfs -copyToLocal /user/hduser/wordcount-output/part-r-00000 ./
 
 fi
 
