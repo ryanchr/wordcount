@@ -32,7 +32,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
             git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git
 
-2. In PBS script `Hadoop-example.pbs`, modify your WORK_HOME path. 
+2. In PBS script `hadoop-example.pbs`, modify your WORK_HOME path. 
 3. The current PBS script will run the hadoop example (wordcount). If you want to run other examples, modify the corresponding paths.
 4. In `setup-and-start-hadoop-on-hpcc`, change line 8 `HADOOP_TEMPLATE_DIR` to your working directory, specifically where your conf/ folder is.
 
@@ -40,7 +40,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 5. Submit PBS script.
 
-            qsub Hadoop-example.pbs
+            qsub hadoop-example.pbs
 
 
  
