@@ -3,7 +3,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 <Option 1> Interactive mode
 
-1.
+1. In setup-and-start-hadoop-on-hpcc, change line 8 HADOOP_TEMPLATE_DIR to your working directory, specifically where your conf/ folder is.
 
             git clone https://github.com/JackMing/Hadoop-1.1.2-on-USC-HPCC-Cluster.git
 
