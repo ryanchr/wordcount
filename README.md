@@ -20,11 +20,13 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
             source setup.sh
             setup-and-start-hadoop-on-hpcc
 
-5. After the setup, you can submit your hadoop job as you want. You can also manage the HDFS by the command
+5. After the setup, you can submit your hadoop job as you want. You can also manage the HDFS by the command `hdfs`
 
-            hdfs
+6. If you want to verify the Hadoop operted correctly, you can try to run the following example
 
-6. Please remember to copy your output file out from the HDFS each time you finish your operation. The HDFS will be erased after you leave the cluster or the running time exceeds the walltime limit you set up before.
+            hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar pi 250 1000
+
+7. Please remember to copy your output file out from the HDFS each time you finish your operation. The HDFS will be erased after you leave the cluster or the running time exceeds the walltime limit you set up before.
 
 <Option 2> **Submit PBS script**
 
