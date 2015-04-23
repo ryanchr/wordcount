@@ -40,7 +40,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 5. Submit PBS script.
 
-            qsub Hadoop-example.pb
+            qsub Hadoop-example.pbs
 
 
  
