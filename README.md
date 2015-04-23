@@ -14,7 +14,10 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
             source setup.sh
             setup-and-start-hadoop-on-hpcc
 
-4. After the setup, you can submit your hadoop job as you want. You can also manage the HDFS by the command `hdfs`.
+4. After the setup, you can submit your hadoop job as you want. You can also manage the HDFS by the command
+
+            hdfs
+
 5. Please remember to copy your output file out from the HDFS each time you finish your operation. The HDFS will be erased after you leave the cluster or the running time exceeds the walltime limit you set up before.
 
 <Option 2> Submit PBS script
