@@ -22,7 +22,7 @@ This project is meant to suppport Hadoop-1.1.2 on USC HPCC clusters. The current
 
 5. After the setup, you can submit your hadoop job as you want. You can also manage the HDFS by the command `hdfs`
 
-6. If you want to verify the Hadoop operted correctly, you can try to run the following example
+6. You can run the following example to verify your hadoop is working properly.
 
             hadoop jar /usr/usc/hadoop/1.1.2/hadoop-examples-1.1.2.jar pi 250 1000
 
