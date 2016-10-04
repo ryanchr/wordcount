@@ -5,7 +5,7 @@ if [ -z "$HADOOP_VERSION" ]; then
   exit 1
 fi
 
-HADOOP_TEMPLATE_DIR=${HADOOP_TEMPLATE_DIR:-/path/to/configuration/template/dir/}
+HADOOP_TEMPLATE_DIR=${HADOOP_TEMPLATE_DIR:-/home/rcf-40/renchen/Hadoop-1.1.2-on-USC-HPCC-Cluster/conf/}
 
 export HADOOP_HOME=/usr/usc/hadoop/$HADOOP_VERSION
 

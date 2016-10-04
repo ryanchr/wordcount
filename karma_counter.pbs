@@ -1,0 +1,48 @@
+# !/bin/bash
+# Hadoop HPCC Cluster Test Job
+#PBS -k eo
+#PBS -j eo
+#PBS -l walltime=00:10:00
+#PBS -l nodes=4:ppn=1
+#PBS -l pmem=40m
+
+WORK_HOME=/auto/rcf-40/renchen/Hadoop-1.1.2-on-USC-HPCC-Cluster
+
+echo $(date) - HADOOP PBS Job Started
+
+source $WORK_HOME/setup.sh
+rm $WORK_HOME/karma_counter.out
+
+# This starts the job and task trackers
+$WORK_HOME/setup-and-start-hadoop-on-hpcc
+
+# Check to make sure hadoop started up before running our code.
+if [ $? -eq 0 ]; then
+  cd $WORK_HOME
+  
+  echo "cleaning out old files"
+  hadoop dfs -rmr bin
+  hadoop dfs -rmr karma_counter_out
+  hadoop dfs -rm pg20417_b.txt
+  
+  echo "prepare to copy files over"
+  hadoop dfs -mkdir bin
+  hadoop dfs -put karma_counter bin/karma_counter
+  hadoop dfs -copyFromLocal pg20417.txt pg20417_b.txt
+  
+  echo "run the experiment"
+  hadoop pipes -D hadoop.pipes.java.recordreader=true \
+    -D hadoop.pipes.java.recordwriter=true \
+    -input pg20417_b.txt \
+    -output karma_counter_out \
+    -program bin/karma_counter
+  
+  hadoop dfs -ls
+  
+  echo "copy the result back"
+  hadoop dfs -copyToLocal karma_counter_out/part-00000 ./karma_counter.out
+
+fi
+
+echo $(date) - HADOOP PBS Job Finished
+
